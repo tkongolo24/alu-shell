@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Check if there are any .html files
+shopt -s nullglob  # Make sure *.html expands to empty if no matches
+html_files=( *.html )
+
+if [ ${#html_files[@]} -eq 0 ]; then
+  echo "No HTML files found to copy."
+  exit 0
+fi
+
+# Copy only newer or missing files to parent directory
+cp -u "${html_files[@]}" ../
