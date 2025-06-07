@@ -1,2 +1,9 @@
 #!/bin/bash
-[ -f iacta ] && head -n 3 iacta | tail -n 1 || echo "File 'iacta' not found."
+
+# Check if the file exists
+if [ -f "iacta" ]; then
+    # Display the third line using head and tail
+    head -n 3 iacta | tail -n 1
+else
+    echo "File 'iacta' not found."
+fi
