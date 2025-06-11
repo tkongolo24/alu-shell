@@ -1,2 +1,2 @@
-#!/bin/bash 
-ls -lRA
+#!/bin/bash
+find . -type d ! -name '.' ! -name '..' | wc -l
