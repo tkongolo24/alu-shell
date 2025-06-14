@@ -1,2 +1,2 @@
-#!/bin/bash 
-find . -type f -name '*.gif' -printf '%f\n' | xargs -I{} bash -c $'f="{}"\nprintf "%s\n" "${f%.gif}"' | sort -f
+#!/bin/bash
+find -type f -name "*.gif" | rev | cut -d "/" -f 1 | cut -d '.' -f 2- | rev | LC_ALL=C sort -f
