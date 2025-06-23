@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((2#$BINARY))
+echo "$BINARY" | awk '{for(i=1;i<=NF;i++){n=0; for(j=1;j<=length($i);j++) n=n*2+substr($i,j,1); print n}}'
