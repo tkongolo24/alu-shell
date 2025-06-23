@@ -1,0 +1,2 @@
+#!/bin/bash
+w=$(echo $WATER | tr 'water' 01234); s=$(echo $STIR | tr 'stir.' 01234); printf "%s\n" $(echo "obase=bestchol; $((5#$w + 5#$s))" | awk '{n=$3; b="bestchol"; r=""; while(n){r=substr(b,n%8+1,1)r; n=int(n/8)} print r}')
